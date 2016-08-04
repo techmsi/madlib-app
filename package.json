@@ -1,0 +1,56 @@
+{
+  "name": "madlib-app",
+  "version": "1.0.0",
+  "description": "Mad lib style app using react",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "nodemon server",
+    "build": "webpack",
+    "build-dev": "webpack -w",
+    "tdd": "nodemon -x babel-tape-runner test/*.js | tap-spec",
+    "test": "babel-tape-runner test/*.js | tap-spec",
+    "test-mocha": "make test; mocha"
+  },
+  "keywords": [
+    "madlibs",
+    "react"
+  ],
+  "author": "techmsi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "classnames": "^2.2.5",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-router": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "babel-tape-runner": "^2.0.1",
+    "chai": "^3.5.0",
+    "expose-loader": "^0.7.1",
+    "extend-tape": "^1.2.0",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.10.0",
+    "react-addons-perf": "^15.3.0",
+    "react-addons-test-utils": "^15.2.1",
+    "sinon": "^1.17.5",
+    "supertest": "^1.2.0",
+    "tap-spec": "^4.1.1",
+    "tap-webpack-plugin": "^1.1.0",
+    "tape": "^4.6.0",
+    "tape-jsx-equals": "^1.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1"
+  }
+}
