@@ -1,0 +1,161 @@
+html {
+  font-size: 100%;
+}
+
+body, input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #111;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+body{
+  padding-top: 3rem;
+}
+
+.stripe {
+  background: repeating-linear-gradient(
+    0deg,
+    #606dbc,
+    #606dbc 20px,
+    #465298 20px,
+    #465298 50px
+  );
+  background-color: #606dbc;
+  background-size: 100%;
+}
+
+h1, .hint{
+  background-color: #465298;
+  color: #fff;
+  line-height: 1.3rem;
+  margin: 0 auto;
+  padding: 2rem .45rem;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h1::before{
+  content: '';
+  background-image: url('favicon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 3rem;
+  padding-right: 1rem;
+  width: 3rem;
+  vertical-align: baseline;
+}
+
+.hint {
+  font-size: 1rem;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 8px 10px 5px #2a346b;
+  display: block;
+  margin: .75rem 1rem;
+  padding: 1rem;
+}
+
+.hint::after,
+.container::after{
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.container div > * {
+  display: inline-block;
+  font-family: 'Lora', serif;
+  line-height: 2rem;
+  padding: .25rem;
+  vertical-align: top;
+}
+/* Describes part of speech below blank */
+.container [data-type]::after{
+  color: #88a1b7;
+  content: attr(data-type);
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  margin: 0 .65rem;
+}
+
+.container input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: .25rem;
+  font-family: 'Lora', serif;
+  padding: .25rem 0;
+  width: 10rem;
+}
+::-webkit-input-placeholder {
+  color: #ffae18;
+}
+
+.blank {
+  border-bottom: 1px dashed #ccc;
+  color: #239ae0;
+  cursor: pointer;
+  font-style: normal;
+  padding: .25rem 1rem;
+}
+
+#count {
+  color: #ffae18;
+  display: block;
+  font-family: 'Nunito', sans-serif;
+}
+#count::before,
+#count::after {
+  color: #239ae0;
+  content: 'still';
+  font-size: .95rem;
+  padding: 0 .25rem;
+  vertical-align: baseline;
+}
+#count::after{
+  content: 'missing';
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  html {
+    font-size: 120%;
+  }
+  body {
+    padding-top: 0;
+  }
+  .container div > * {
+    line-height: 1.5rem;
+  }
+  .container [data-type]::after {
+    margin: .45rem auto;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  html {
+    font-size: 130%;
+  }
+  .container {
+    margin: 2.5rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 95%;
+  }
+  .container {
+    margin: 2.5rem;
+  }
+}

@@ -10,7 +10,7 @@ const pluginsList = [
   new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.UglifyJsPlugin({
-    compress:{
+    compress: {
       warnings: false
     },
     minimize: true
@@ -20,7 +20,7 @@ const pluginsList = [
 module.exports = {
   entry: `./${appFolder}/client.js`,
   output: {
-    path: 'public',
+    path: 'public/dist',
     filename: 'bundle.js'
   },
   devtool: 'source-map',
@@ -29,8 +29,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test:/\.js$/,
-        loader:'babel',
+        test: /\.js$/,
+        loader: 'babel',
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react'],
