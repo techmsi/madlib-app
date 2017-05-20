@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import classNames from 'classnames';
 
 // Parses text template with placeholders
 import Templater from '../utils/Templater';
@@ -10,7 +9,7 @@ import Blank from './Blank';
 import Words from './Words';
 
 export default class Story extends Component {
-  constructor(props){
+  constructor (props) {
     super(props);
 
     this.api = new Api('http://localhost:3000');
@@ -19,62 +18,68 @@ export default class Story extends Component {
     this.state = {
       remaining: new Set(),
       data: []
-    }
+    };
   }
 
-  componentWillMount(){
+  componentWillMount () {
     this._loadData();
   }
 
-  _loadData(){
+  _loadData () {
     // get from server
     this.api.get('/story')
-    .then(data => {
-      this._setupParser(data.story);
-      this.setState({ data: data.story });
-    }).catch(e => {console.log('Error', e)})
+      .then(data => {
+        this._setupParser(data.story);
+        this.setState({ data: data.story });
+      }).catch(e => {
+        console.log('Error', e);
+      });
   }
 
-  _setupParser(text){
+  _setupParser (text) {
     this.parser = new Templater(text);
     this.reTpl = this.parser.getTplRe();
     this.wordArray = this.parser.wordArray();
     this.BLANKS = this.parser.countBlanks();
   }
 
-  _isDone(id, command) {
+  _isDone (id, command) {
     const { remaining } = this.state;
 
-    if(command === 'add'){
+    if (command === 'add') {
       remaining.add(id);
-    }
-    else {
+    } else {
       remaining.delete(id);
     }
 
-    this.setState({ remaining });
-
+    this.setState({remaining});
   }
 
-  renderBlank(text, i) {
+  renderBlank (text, i) {
     const strippedWord = text.replace(this.reTpl, '$1');
-    return (<Blank key={`missing-${strippedWord}-${i}`} id={`missing-${strippedWord}-${i}`} type={strippedWord} onEdit={this._isDone.bind(this)} />);
+    return (<Blank
+      key={`missing-${strippedWord}-${i}`}
+      id={`missing-${strippedWord}-${i}`}
+      type={strippedWord}
+      onEdit={this._isDone.bind(this)} />);
   }
 
-  renderWord(text, i) {
+  renderWord (text, i) {
     const { remaining } = this.state;
 
-    return this.BLANKS === remaining.size ? (<Words key={`word-${i}`}>{text}</Words>) : null;
+    return this.BLANKS === remaining.size ? (<Words key={`word-${i}`}>
+      {text}
+    </Words>) : null;
   }
 
-  render() {
+  render () {
     const { wordArray, parser, BLANKS } = this;
-    const { remaining, data } = this.state;
+    const { remaining } = this.state;
     let missing = BLANKS - remaining.size;
 
-    return ( <div>
-      {wordArray.map((w, i) => parser.isBlank(w) ? this.renderBlank(w,i) : this.renderWord(w,i))}
-      { missing  === 0 ? null : <span id="count">{missing}</span>}
-      </div>)
+    return (<div>
+      {wordArray.map((w, i) => parser.isBlank(w) ? this.renderBlank(w, i) : this.renderWord(w, i))}
+      {missing === 0 ? null : <span id='count'>{missing}</span>}
+    </div>);
   }
 }

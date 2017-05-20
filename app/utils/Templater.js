@@ -1,27 +1,26 @@
 export default class Templater {
-  constructor(text) {
+  constructor (text) {
     this.text = text;
     this.reTpl = /{(.*?)}/g;
     this.rePuncAndSpaces = /{?\w+}?|[\.\-,\?]/gm;
   }
 
-  getTplRe(){
+  getTplRe () {
     return this.reTpl;
   }
 
-  countBlanks() {
+  countBlanks () {
     const { reTpl, text } = this;
     return text.match(reTpl).length;
   }
 
-  isBlank(substring){
+  isBlank (substring) {
     const { reTpl } = this;
-    return reTpl.test(substring)
+    return reTpl.test(substring);
   }
 
-  wordArray(){
+  wordArray () {
     const { rePuncAndSpaces, text } = this;
     return text.match(rePuncAndSpaces);
   }
-
 }
