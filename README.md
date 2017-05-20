@@ -17,5 +17,9 @@ npm run build-dev
 npm start
 ```
 
-## Test
-* not yet implemented
+## Test (Front-end)
+* In another tab, while the server is running.
+```bash
+npm run test-fe
+```
+* This creates `reports/screenshots`

@@ -10,7 +10,8 @@
     "build-dev": "webpack -w",
     "tdd": "nodemon -x babel-tape-runner test/*.js | tap-spec",
     "test": "babel-tape-runner test/*.js | tap-spec",
-    "test-mocha": "make test; mocha"
+    "test-mocha": "make test; mocha",
+    "test-fe": "testcafe chrome test/testfe.js --reporter list --screenshots 'reports/screenshots/'"
   },
   "keywords": [
     "madlibs",
@@ -50,6 +51,8 @@
     "tap-webpack-plugin": "^1.1.0",
     "tape": "^4.6.0",
     "tape-jsx-equals": "^1.0.0",
+    "testcafe": "*",
+    "testcafe-reporter-list": "*",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1"
   }
