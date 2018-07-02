@@ -40,7 +40,8 @@ export default class Blank extends Component {
   _renderEditField () {
     const { type, id } = this.props;
 
-    return (<input
+    return (
+    <input
       id={id}
       type='text'
       autoFocus

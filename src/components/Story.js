@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 // Parses text template with placeholders
-import Templater from '../utils/Templater';
-import Api from '../utils/Api';
+import Templater from 'utils/Templater';
+import Api from 'utils/Api';
 
 // Stories consist of words & blanks
-import Blank from './Blank';
-import Words from './Words';
+import Blank from 'components/Blank';
+import Words from 'components/Words';
 
 export default class Story extends Component {
   constructor (props) {
