@@ -1,11 +1,11 @@
 'use strict';
 
-import test from 'tape';
+const test = require('tape');
 
-const add = (a,b) => a + b;
+const add = (a, b) => a + b;
 
 test('The add method', (assert) => {
-  var actual = add(1,2);
+  var actual = add(1, 2);
   var expected = 3;
 
   assert.equal(actual, expected, 'should add 2 numbers');
@@ -13,6 +13,6 @@ test('The add method', (assert) => {
 });
 
 test('successful test', (t) => {
-  t.equal(1, 1)
-  t.end()
+  t.equal(1, 1);
+  t.end();
 });
