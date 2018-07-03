@@ -10,7 +10,7 @@ npm start
 ## Run while developing
 * In one tab
 ```bash
-npm run build-dev
+npm run dev:build
 ```
 * In another tab
 ```bash
@@ -23,3 +23,8 @@ npm start
 npm run test-fe
 ```
 * This creates `reports/screenshots`
+
+## Screenshots
+![Start](/screenshots/screen_start.png?raw=true "Start Screen")
+![Missing](/screenshots/screen_missing.png?raw=true "Missing word Screen")
+![End](/screenshots/screen_end.png?raw=true "Start Screen")
