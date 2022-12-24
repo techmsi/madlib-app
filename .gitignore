@@ -1,7 +1,11 @@
 # Dependency directories
 node_modules
 
+# Distribution directories
+dist/
+
 # Dist
 reports/*
 .DS_Store
 *-lock.json
+.env
