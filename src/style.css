@@ -1,0 +1,192 @@
+html {
+  font-size: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+.theme-1 {
+  --accent-100: #ffae18;
+  --bg: red;
+  --color-base: #111;
+  --color-blue-100: #88a1b7;
+  --color-blue-500: #239ae0;
+  --color-blue-700: #606dbc;
+  --color-blue-800: #465298;
+  --color-blue-900: #2a346b;
+  --color-grey-100: #ddd;
+  --color-grey-200: #ccc;
+  --color-white: #fff;
+  --font-body: 'Nunito', sans-serif;
+  --font-heading: 'Lora', serif;
+  --logo-size: 3rem;
+  --loader-size: 3rem;
+  --spacing-sm: 1rem;
+  --spacing-xs: 0.25rem;
+  --text-lg: 1.7rem;
+  --text-sm: 1rem;
+  --text-xl: 2.5rem;
+  --text-xs: 0.85rem;
+}
+body,
+input {
+  color: var(--color-base);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: 2rem;
+  text-align: center;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: grid;
+}
+
+.spinner:before {
+  content: '';
+  width: var(--loader-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid var(--color-grey-100);
+  border-top-color: var(--color-blue-700);
+  animation: spinner 1000ms linear infinite;
+}
+
+.stripe {
+  background: repeating-linear-gradient(
+    0deg,
+    var(--color-blue-700),
+    var(--color-blue-700) 20px,
+    var(--color-blue-800) 20px,
+    var(--color-blue-800) 50px
+  );
+  background-color: var(--color-blue-700);
+  background-size: 100%;
+}
+h1,
+.hint {
+  background-color: var(--color-blue-800);
+  color: var(--color-white);
+  line-height: 1.3rem;
+  margin: 0 auto;
+  font-size: var(--text-sm);
+  padding: 2rem 0.45rem;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: var(--text-xl);
+}
+
+h1::before {
+  background-image: url('/public/favicon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: var(--logo-size);
+  padding-right: var(--spacing-sm);
+  vertical-align: baseline;
+  width: var(--logo-size);
+}
+
+.hint {
+  font-size: var(--text-sm);
+}
+
+.box {
+  background-color: var(--color-white);
+  border-radius: var(--spacing-xs);
+  box-shadow: 8px 10px 5px var(--color-blue-900);
+  padding: var(--spacing-sm);
+}
+
+.container {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  width: 90vw;
+  height: 50vh;
+  overflow: auto;
+}
+
+.container div > * {
+  display: inline-block;
+  font-family: var(--font-heading);
+  line-height: 2rem;
+  padding: var(--spacing-xs);
+  vertical-align: top;
+}
+/* Describes part of speech below blank */
+[data-type]::after {
+  color: var(--color-blue-100);
+  content: attr(data-type);
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.container input {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-grey-100);
+  border-radius: var(--spacing-xs);
+  font-family: var(--font-heading);
+  padding: var(--spacing-xs) 0;
+  width: 10rem;
+}
+
+::-webkit-input-placeholder {
+  color: var(--accent-100);
+}
+
+.blank {
+  border-bottom: 1px dashed var(--color-grey-200);
+  color: var(--color-blue-500);
+  cursor: pointer;
+  font-style: normal;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.count {
+  grid-column: 1/-1;
+  color: var(--accent-100);
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  flex-basis: 100%;
+  width: 0;
+}
+
+.count::before,
+.count::after {
+  color: var(--color-blue-500);
+  font-size: var(--text-lg);
+}
+
+.count::before {
+  content: ' still ';
+}
+
+.count::after {
+  content: ' missing ';
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 160%;
+  }
+}
