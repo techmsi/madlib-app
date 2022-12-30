@@ -1,26 +1,40 @@
-export default class Templater {
-  constructor (text) {
+class Templater {
+  constructor(text) {
     this.text = text;
-    this.reTpl = /{(.*?)}/g;
-    this.rePuncAndSpaces = /{?\w+}?|[\.\-,\?]/gm;
+    this.blankRegex = /{(.*?)}/g;
+    this.punctuationAndSpacesRegex = /{?\w+}?|[\.\-,\?]/gm;
   }
 
-  getTplRe () {
-    return this.reTpl;
+  getTemplateRegex() {
+    return this.blankRegex;
   }
 
-  countBlanks () {
-    const { reTpl, text } = this;
-    return text.match(reTpl).length;
+  countBlanks() {
+    const { blankRegex, text } = this;
+
+    return text.match(blankRegex).length;
   }
 
-  isBlank (substring) {
-    const { reTpl } = this;
-    return reTpl.test(substring);
+  getBlanks() {
+    const { blankRegex, text } = this;
+
+    return text.match(blankRegex);
   }
 
-  wordArray () {
-    const { rePuncAndSpaces, text } = this;
-    return text.match(rePuncAndSpaces);
+  isBlank(substring) {
+    const { blankRegex } = this;
+
+    return blankRegex.test(substring);
+  }
+
+  wordArray() {
+    const { punctuationAndSpacesRegex, text } = this;
+    return text.match(punctuationAndSpacesRegex).map((word) => ({
+      text: word,
+      blank: this.isBlank(word),
+      strippedWord: word.replace(this.blankRegex, '$1'),
+    }));
   }
 }
+
+exports.Templater = Templater;

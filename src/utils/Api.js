@@ -1,19 +1,15 @@
-import fetch from 'isomorphic-fetch';
-
 export default class Api {
-  constructor (host) {
+  constructor(host) {
     this.host = host;
   }
-  get (url) {
-    return fetch(`${this.host}${url}`).then(resp => {
-      let json = resp.json();
+  async get(url) {
+    try {
+      const response = await fetch(`${this.host}/${url}`);
+      const data = await response.json();
 
-      return (resp.ok) ? json : json.then(err => {
-        throw err;
-      });
-    })
-      .catch(err => {
-        console.log('Fetch API Error', err);
-      });
+      return data;
+    } catch (error) {
+      console.log('Fetch API Error', error);
+    }
   }
 }
