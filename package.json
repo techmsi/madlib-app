@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon server",
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "keywords": [
     "madlibs",
@@ -15,6 +17,8 @@
   "author": "techmsi",
   "license": "ISC",
   "dependencies": {
+    "@sentry/react": "*",
+    "@sentry/tracing": "*",
     "cors": "*",
     "dotenv": "*",
     "express": "*",
@@ -30,11 +34,20 @@
     "@babel/preset-env": "*",
     "@babel/preset-react": "*",
     "@babel/runtime": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/react": "*",
+    "@testing-library/user-event": "*",
+    "axe-core": "*",
     "babel-loader": "*",
-    "css-loader": "^6.7.3",
+    "css-loader": "*",
+    "cypress": "*",
+    "cypress-axe": "*",
+    "dotenv-webpack": "*",
     "html-webpack-plugin": "*",
+    "jest": "*",
+    "jest-environment-jsdom": "*",
     "nodemon": "*",
-    "style-loader": "^3.3.1",
+    "style-loader": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "webpack-dev-server": "*"
