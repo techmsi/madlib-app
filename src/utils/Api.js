@@ -9,7 +9,8 @@ export default class Api {
 
       return data;
     } catch (error) {
-      console.log('Fetch API Error', error);
+      console.log('Fetch API Error', error.message);
+      throw error;
     }
   }
 }
