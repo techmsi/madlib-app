@@ -29,6 +29,7 @@ class Templater {
 
   wordArray() {
     const { punctuationAndSpacesRegex, text } = this;
+
     return text.match(punctuationAndSpacesRegex).map((word) => ({
       text: word,
       blank: this.isBlank(word),

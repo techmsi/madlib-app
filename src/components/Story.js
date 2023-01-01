@@ -1,33 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 
 // Stories consist of words & blanks
 import { BlankSpace, WordSpace } from 'components/Blank';
+import ErrorBoundary, { useAsyncError } from 'components/ErrorBoundary';
 
 const Missing = ({ missing }) => {
-  return missing === 0 ? null : <span className="count">{missing}</span>;
+  return missing === 0 ? null : (
+    <span data-testid="missing" className="count">
+      <b>{missing}</b>
+    </span>
+  );
 };
 
-export default class Story extends Component {
+class Words extends Component {
   state = {
     remaining: new Set(),
-    data: [],
   };
-
-  async componentDidMount() {
-    this.onLoad();
-  }
-
-  async onLoad() {
-    try {
-      const data = await this.props.api.get('story');
-      console.table(data.words);
-      this.setState({ data });
-
-      return data;
-    } catch (error) {
-      console.log('Load API Error', error);
-    }
-  }
 
   onEdit = (id, command) => {
     const { remaining } = this.state;
@@ -42,8 +30,8 @@ export default class Story extends Component {
   };
 
   render() {
-    const { remaining, data } = this.state;
-    const { words = [], blanks = [] } = data || {};
+    const { remaining } = this.state;
+    const { words = [], blanks = [] } = this.props.data || {};
     const missing = blanks?.length - remaining.size;
 
     if (words?.length === 0) {
@@ -69,3 +57,31 @@ export default class Story extends Component {
     );
   }
 }
+
+const WordDisplay = ({ api }) => {
+  const [data, setData] = useState(null);
+  const throwError = useAsyncError();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await api.get('story');
+      setData(data);
+    };
+
+    fetchData().catch((e) => {
+      throwError(e);
+    });
+  }, []);
+
+  return <Words data={data} />;
+};
+
+const Story = ({ api }) => {
+  return (
+    <ErrorBoundary>
+      <WordDisplay api={api} />
+    </ErrorBoundary>
+  );
+};
+
+export default Story;
