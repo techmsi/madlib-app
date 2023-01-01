@@ -1,6 +1,7 @@
 const path = require('path');
 require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const appFolder = path.resolve(__dirname, 'src');
 const outputFolder = path.resolve(__dirname, 'dist');
@@ -39,6 +40,8 @@ const html = new HtmlWebpackPlugin({
   template: htmlTemplateFolder,
 });
 
+const envVariables = new Dotenv();
+
 const optimization = { moduleIds: 'deterministic' };
 const webpackConfig = {
   mode: process.env.MODE || 'development',
@@ -65,7 +68,7 @@ const webpackConfig = {
     preset: 'minimal',
   },
   optimization,
-  plugins: [html],
+  plugins: [html, envVariables],
 };
 
 module.exports = webpackConfig;
