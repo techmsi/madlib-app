@@ -52,6 +52,7 @@ export default class Blank extends Component {
         {editing ? (
           <input
             id={id}
+            aria-label={`Enter the missing ${type}`}
             type="text"
             autoFocus
             placeholder={type}
