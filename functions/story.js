@@ -1,4 +1,4 @@
-/* eslint-disable */
+const fetch = require('node-fetch');
 const { Lexer, Tagger } = require('fast-tag-pos');
 const definitions = require('./definitions.json');
 
