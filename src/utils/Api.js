@@ -4,7 +4,7 @@ export default class Api {
   }
   async get(url) {
     try {
-      const response = await fetch(`${this.host}/${url}`);
+      const response = await fetch(url);
       const data = await response.json();
 
       return data;
