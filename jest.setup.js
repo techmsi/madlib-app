@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { mockApiResponse } from 'mocks/mockApiResponse';
 
-const mockStoryApi = 'http://localhost:3000/api/story';
+const mockStoryApi = 'api/story';
 export default async function mockFetch(url) {
   switch (url) {
     case mockStoryApi: {
