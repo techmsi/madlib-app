@@ -1,6 +1,7 @@
 html {
   font-size: 100%;
-  color-scheme: light dark; /* both supported */
+  color-scheme: light dark;
+  height: -webkit-fill-available;
 }
 * {
   box-sizing: border-box;
@@ -32,20 +33,21 @@ html {
   --text-xs: 0.85rem;
 }
 
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 body,
 input,
 button {
-  color: var(--color-base-light);
+  color: var(--color-base-dark);
   font-family: var(--font-body);
   font-size: var(--text-lg);
   line-height: 2rem;
   text-align: center;
-}
-
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
 }
 
 @keyframes spinner {
@@ -130,6 +132,7 @@ h1::before {
 
 .error button {
   cursor: pointer;
+  color: var(--color-base-light);
   font-size: var(--text-sm);
   padding: 0 var(--spacing-sm);
   border-radius: 0.25rem;
@@ -210,7 +213,7 @@ h1::before {
 
 @media screen and (min-width: 600px) {
   html {
-    font-size: 160%;
+    font-size: 140%;
   }
 }
 

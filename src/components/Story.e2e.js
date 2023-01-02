@@ -20,7 +20,6 @@ const getDuration = (performance) => {
 
 const spinnerEl = '.spinner';
 const appEl = '[data-cy-root]';
-const API_ENDPOINT_LOCAL = 'http://localhost:3000/api/story';
 const darkColor = toRGB('#171b38');
 const lightColor = toRGB('#FFFFFF');
 
@@ -35,7 +34,8 @@ describe('Story E2E', () => {
   const apiSetup = () => {
     cy.request({
       method: 'GET',
-      url: API_ENDPOINT_LOCAL,
+      json: true,
+      url: Cypress.env('API_ENDPOINT'),
     }).then(({ status, body: { words, blanks } = {} }) => {
       data = {
         totalWords: words?.length,
@@ -49,7 +49,6 @@ describe('Story E2E', () => {
   };
 
   before(() => {
-    Cypress.env('API_ENDPOINT', API_ENDPOINT_LOCAL);
     apiSetup();
   });
 
@@ -61,7 +60,7 @@ describe('Story E2E', () => {
     it('page loads with specified word blanks.', () => {
       cy.visit('/');
       cy.get(spinnerEl).should('be.visible');
-      cy.intercept(API_ENDPOINT_LOCAL).as('madLibsStory');
+      cy.intercept(Cypress.env('API_ENDPOINT')).as('madLibsStory');
       cy.visit('/');
       cy.wait('@madLibsStory', { timeout: 5000 });
       cy.get(spinnerEl).should('not.exist');

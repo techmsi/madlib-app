@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[dev]
+  command = "npm run build:frontend"
+  port = 8888
+  autoLaunch = true
+
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publish = "dist"
