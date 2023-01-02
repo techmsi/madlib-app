@@ -1,0 +1,177 @@
+{
+  "CD": {
+    "name": "Cardinal number",
+    "shortname": "number",
+    "example": "one,two"
+  },
+  "DT": {
+    "name": "Determiner",
+    "shortname": "Determiner",
+    "example": "the,some"
+  },
+  "EX": {
+    "name": "Existential there",
+    "shortname": "there",
+    "example": "there"
+  },
+  "FW": {
+    "name": "Foreign Word",
+    "shortname": "foreign word",
+    "example": "mon dieu"
+  },
+  "IN": {
+    "name": "Preposition",
+    "shortname": "preposition",
+    "example": "of,in,by"
+  },
+  "JJ": {
+    "name": "Adjective",
+    "shortname": "adjective",
+    "example": "big"
+  },
+  "JJR": {
+    "name": "Adjective, comparative",
+    "shortname": "adjective",
+    "example": "bigger"
+  },
+  "JJS": {
+    "name": "Adjective, superlative",
+    "shortname": "adjective",
+    "example": "biggest"
+  },
+  "LS": {
+    "name": "List item marker",
+    "shortname": "list item",
+    "example": "1,One"
+  },
+  "MD": {
+    "name": "Modal",
+    "shortname": "modal",
+    "example": "can,should"
+  },
+  "NN": {
+    "name": "Noun",
+    "shortname": "noun",
+    "example": "dog"
+  },
+  "NNP": {
+    "name": "Proper noun, singular",
+    "shortname": "proper noun, singular",
+    "example": "Edinburgh"
+  },
+  "NNPS": {
+    "name": "Proper noun, plural",
+    "shortname": "proper noun, plural",
+    "example": "Smiths"
+  },
+  "NNS": {
+    "name": "Noun, plural",
+    "shortname": "noun, plural",
+    "example": "dogs"
+  },
+  "POS": {
+    "name": "Possessive ending",
+    "shortname": "Possessive ending",
+    "example": "'s"
+  },
+  "PDT": {
+    "name": "Predeterminer",
+    "shortname": "predeterminer",
+    "example": "all, both"
+  },
+  "PRP$": {
+    "name": "Possessive pronoun",
+    "shortname": "possessive pronoun",
+    "example": "my,one's"
+  },
+  "PRP": {
+    "name": "Personal pronoun",
+    "shortname": "personal pronoun",
+    "example": "I,you,she"
+  },
+  "RB": {
+    "name": "Adverb",
+    "shortname": "adverb",
+    "example": "quickly"
+  },
+  "RBR": {
+    "name": "Adverb, comparative",
+    "shortname": "adverb",
+    "example": "faster"
+  },
+  "RBS": {
+    "name": "Adverb, superlative",
+    "shortname": "adverb",
+    "example": "fastest"
+  },
+  "RP": {
+    "name": "Particle",
+    "shortname": "particle",
+    "example": "up,off"
+  },
+  "SYM": {
+    "name": "Symbol",
+    "shortname": "symbol",
+    "example": "+,%,&"
+  },
+  "TO": {
+    "name": "'to'",
+    "shortname": "'to'",
+    "example": "to"
+  },
+  "UH": {
+    "name": "Interjection",
+    "shortname": "interjection",
+    "example": "oh, oops"
+  },
+  "VB": {
+    "name": "verb, base form",
+    "shortname": "verb",
+    "example": "eat"
+  },
+  "VBD": {
+    "name": "verb, past tense",
+    "shortname": "verb",
+    "example": "ate"
+  },
+  "VBG": {
+    "name": "verb, gerund/present participle",
+    "shortname": "verb",
+    "example": "eating"
+  },
+  "VBN": {
+    "name": "verb, past part",
+    "shortname": "verb",
+    "example": "eaten"
+  },
+  "VBP": {
+    "name": "Verb, present",
+    "shortname": "verb",
+    "example": "eat"
+  },
+  "VBZ": {
+    "name": "Verb, present",
+    "shortname": "verb",
+    "example": "eats"
+  },
+  "WDT": {
+    "name": "Wh-determiner",
+    "shortname": "determiner",
+    "example": "which,that"
+  },
+  "WP": {
+    "name": "Wh pronoun",
+    "shortname": "pronoun",
+    "example": "who,what"
+  },
+  "WP$": {
+    "name": "Possessive-Wh",
+    "shortname": "possessive",
+    "example": "whose"
+  },
+  "WRB": {
+    "name": "Wh-adverb",
+    "shortname": "adverb",
+    "example": "how,where"
+  }
+}

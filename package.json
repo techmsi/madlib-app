@@ -1,13 +1,16 @@
 {
   "name": "madlib-app",
   "version": "1.0.0",
-  "description": "Mad lib style app using react",
-  "main": "server.js",
+  "description": "Mad lib app using react",
   "scripts": {
-    "start": "nodemon server",
-    "dev": "webpack-dev-server",
-    "build": "webpack",
+    "start": "npm run dev:backend",
+    "dev:frontend": "webpack-dev-server",
+    "dev:backend": "netlify dev",
+    "build:backend": "netlify build",
+    "build:frontend": "webpack",
+    "build": "npm run build:frontend",
     "test": "jest",
+    "e2e": "cypress run",
     "coverage": "jest --coverage"
   },
   "keywords": [
@@ -19,10 +22,7 @@
   "dependencies": {
     "@sentry/react": "*",
     "@sentry/tracing": "*",
-    "cors": "*",
     "dotenv": "*",
-    "express": "*",
-    "isomorphic-fetch": "*",
     "react": "*",
     "react-dom": "*"
   },
@@ -46,6 +46,7 @@
     "html-webpack-plugin": "*",
     "jest": "*",
     "jest-environment-jsdom": "*",
+    "netlify-cli": "^12.x",
     "nodemon": "*",
     "style-loader": "*",
     "webpack": "*",

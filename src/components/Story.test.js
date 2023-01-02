@@ -6,7 +6,7 @@ import Api from 'utils/Api';
 import userEvent from '@testing-library/user-event';
 const user = userEvent.setup();
 
-const api = new Api('http://localhost:3000/api');
+const api = new Api('http://localhost:3000');
 const apiFailingRoute = new Api('http://localhost:3000/apis');
 
 describe('<Story>', () => {

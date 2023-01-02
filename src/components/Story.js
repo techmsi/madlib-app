@@ -64,7 +64,7 @@ const WordDisplay = ({ api }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await api.get('story');
+      const data = await api.get('api/story');
       setData(data);
     };
 

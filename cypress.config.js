@@ -5,10 +5,12 @@ const indexHtmlFile = path.join(__dirname, 'public', 'index.html');
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:5000',
     specPattern: 'src/**/*.e2e.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      config.baseUrl = process.env.API_ENDPOINT;
+      config.env.API_ENDPOINT = `${process.env.API_ENDPOINT}/api/story`;
+
+      return config;
     },
   },
 

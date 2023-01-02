@@ -10,3 +10,8 @@ reports/*
 *-lock.json
 .env
 coverage/
+cypress/videos/
+cypress/screenshots/
+
+# Local Netlify folder
+.netlify
