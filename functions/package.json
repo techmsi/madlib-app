@@ -13,6 +13,6 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "@devil7softwares/pos": "^1.0.2"
+    "fast-tag-pos": "^2.0.0"
   }
 }
