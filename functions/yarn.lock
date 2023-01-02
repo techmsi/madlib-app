@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@devil7softwares/pos@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@devil7softwares/pos/-/pos-1.0.2.tgz#b6b5bf2ce0fb280771f0532a81828630ae2b7a56"
-  integrity sha512-49Ke26+++Ix8C5LChi4uga7aWgMuc5zV1NqjGxXxE7DralZwe+hvUuSJmBDWS+HHZaK9rFzLNdufV4HAvvOxPA==
+fast-tag-pos@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fast-tag-pos/-/fast-tag-pos-2.0.0.tgz#de0f6923e92ca4e6d1bb32fd5e23388d5f86e68f"
+  integrity sha512-BdT2WMan25s8x5obDInSy1twqAKzeqHQ7T6fbowICcIUANoCRlhWUPn1e7r4Me2Jz3tNFT71MIZf2hIn0tUrag==

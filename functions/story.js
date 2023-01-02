@@ -1,5 +1,5 @@
 /* eslint-disable */
-const { Lexer, Tagger } = require('@devil7softwares/pos');
+const { Lexer, Tagger } = require('fast-tag-pos');
 const definitions = require('./definitions.json');
 
 const parseText = (partOfSpeechTaggedWords) => {
