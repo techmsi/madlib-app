@@ -23,6 +23,7 @@
     "@sentry/react": "*",
     "@sentry/tracing": "*",
     "dotenv": "*",
+    "fast-tag-pos": "^2.0.0",
     "react": "*",
     "react-dom": "*"
   },
