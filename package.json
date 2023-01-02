@@ -22,9 +22,9 @@
   "dependencies": {
     "@sentry/react": "*",
     "@sentry/tracing": "*",
+    "cross-fetch": "^3.1.5",
     "dotenv": "*",
     "fast-tag-pos": "^2.0.0",
-    "node-fetch": "^3.3.0",
     "react": "*",
     "react-dom": "*"
   },
