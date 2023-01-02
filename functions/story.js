@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const fetch = require('cross-fetch');
 const { Lexer, Tagger } = require('fast-tag-pos');
 const definitions = require('./definitions.json');
 
